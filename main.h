@@ -6,10 +6,14 @@
 #include <stdarg.h>
 #include <stdint.h>
 
+#define UNUSED(x) (void)(x)
+
+
 struct convert
 {
 	char *sym;
 	int (*f)(va_list);
+
 };
 typedef struct convert conver_t;
 
@@ -23,6 +27,8 @@ int p_char(va_list);
 int p_string(va_list args);
 int p_percent_integer(va_list);
 int print_unsgined_number(unsigned int n);
-int print_number(va_list);
+int print_number(va_list args);
+int p_percent(va_list args);
+int p_integer(va_list args);
 
 #endif

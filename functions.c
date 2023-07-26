@@ -89,7 +89,7 @@ int p_string(va_list args)
 	return (i);
 }
 
-int p_percent_integer(__attribute__((unused)), va_list args)
+int p_percent_integer(__attribute__((unused)) va_list args)
 {
 	int n; /* for integer */
 
