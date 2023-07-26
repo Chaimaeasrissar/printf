@@ -1,49 +1,50 @@
 #include "main.h"
 
 /**
- * _printf - Print everything
- * @format: format is a character string
- * Return: the number of characters printed
+ * _printf - Produces output according to a format.
+ * @format: The format string.
+ *
+ * Return: The number of characters printed (excluding the null byte used
+ * to end output to strings).
 */
 int _printf(const char *format, ...)
 {
-	int sum = 0;
-	va_list org_list;
-	char *start, *p;
-	int flags, width, precision, modifier, specifier, func_ind = 0;
+	va_list args;
+	int printed_chars = 0;
+	int printed_chars = 0;
 
-	functions = func;
-	va_start(org_list, format);
-
-	if (!format || (format[0] == '%' && format[1] == ' ' && !format[2]))
-		return (-1);
-	for (p = (char *)format; *p; p++)
+	va_start(args, format);
+	while (format && format[i])
 	{
-		func(&functions, org_list);
-		if (*p != '%')
+		if (format[i] == '%')
 		{
-			sum += _putchar(*p);
-			continue;
+			i++;
+			if (format[i] == '%')
+			{
+				write(1, &format[i], 1);
+				printed_chars++;
+			}
+			else if (format[i] == 'c')
+			{
+				char c = va_arg(args, int);
+
+				write(1, &c, 1);
+				printed_chars++;
+			}
+			else if (format[i] == 's')
+			{
+				char *str = va_arg(args, char*);
+				int j = 0;
+			}
+			else
+			{
+				write(1, &format[i - 1], &format[i], 1);
+				printed_chars += 2;
+				printed_chars++;
+			}
 		}
-		start = p;
-		p++;
-		while (get_flag(p, &functions))
-			/* while char at p is a flag char */
-		{
-			p++;
-			/* to the next char */
-		}
-		p = get_width(p, &functions, org_list);
-		p = get_precision(p, &functions, org_list);
-		if (get_modifier(p, &functions, org_list))
-			p++;
-		if (!get_specifier(p))
-			sum += print_from_to(p, start,
-					functions1_modifier || functions2_modifier ? p - 1 : 0);
-		else
-			sum += get_print_func(p, org_list, &functions);
+		i++;
 	}
-	_puchtar(BUF_FLUSH);
-	va_end(org_list);
-	return (sum);
+	va_end(args);
+	return (printed_chars);
 }

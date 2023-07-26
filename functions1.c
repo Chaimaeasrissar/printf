@@ -16,7 +16,7 @@ int print_plus_flag(va_list args_list, char output_buffer[])
 
 		output_buffer[i--] = '+';
 
-	return (print_signed int(args_list, output_buffer + i + 1) + 1);
+	return ((print_unsigned int)((args_list, output_buffer + i + 1) + 1));
 }
 
 /************** PRINT SPACE FLAG *****************/
@@ -34,7 +34,7 @@ int print_space_flag(va_list args_list, char output_buffer[])
 	if (num >= 0)
 		output_buffer[i--] = ' ';
 
-	return (print_signed int(args_list, output_buffer + i + 1) + 1);
+	return ((print_signed int)((args_list, output_buffer + i + 1) + 1));
 }
 /************** PRINT HASH FLAG *****************/
 /**
@@ -52,19 +52,19 @@ int print_hash_flag(va_list args_list, char output_buffer[])
 	if (specifier == 'o')
 	{
 		output_buffer[i--] = '0';
-		chars_printed = print_octal(args_list, output_buffer + i + 1);
+		chars_printed = (args_list, output_buffer + i + 1);
 	}
 	else if (specifier == 'x' || specifier == 'X')
 	{
 		output_buffer[i--] = (specifier == 'x') ? 'x' : 'X';
 		output_buffer[i--] = '0';
-		chars_printed = print_hexadecimal(args_list, output_buffer + i + 1);
+		chars_printed = (args_list, output_buffer + i + 1);
 	}
 	else if (specifier == 'b')
 	{
 		output_buffer[i--] = 'b';
 		output_buffer[i--] = '0';
-		chars_printed = print_binary(args_list, output_buffer + i + 1);
+		chars_printed = (args_list, output_buffer + i + 1);
 	}
 	else
 	{

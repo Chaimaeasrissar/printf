@@ -12,7 +12,7 @@ int custom_printf(const char *format, ...)
 	va_list args_list;
 
 	va_start(args_list, format);
-	int chars_printed = 0;
+	chars_printed = 0;
 	char buffer[100];
 
 	while (*format != '\0')
@@ -39,9 +39,9 @@ int custom_printf(const char *format, ...)
 					num /= 10;
 				}
 			}
-			for (int j = i - 1; j >= 0; j--)
+			while (int j = i - 1; j >= 0)
 			{
-				putchar(buffer[j], '%', *format);
+				_std_gnu99(buffer[j], '%', *format);
 				chars_printed++;
 			}
 		}
