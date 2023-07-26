@@ -36,7 +36,7 @@ int append_hexa_code(char asci_code, char buffer[], int j)
 	buffer[j] = map_to[asci_code % 16];
 
 
-	return (3);
+a	return (3);
 }
 
 /**
