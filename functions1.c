@@ -24,12 +24,12 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 	if (num == 0)
 		buffer[i--] = '0';
 	buffer[BUFF_SIZE - 1] = '\0';
-	if (num > 0)
+	while (num > 0)
 	{
 		num /= 16;
 		buffer[i--] = map_to[num % 16];
 	}
-	else if (flags & F_HASH && init_num != 0)
+	if (flags & F_HASH && init_num != 0)
 	{
 		buffer[i--] = '0';
 		buffer[i--] = flag_ch;
