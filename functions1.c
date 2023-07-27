@@ -77,7 +77,7 @@ int print_octal(va_list types, char buffer[],
 	if (num == 0)
 		buffer[i--] = '0';
 	buffer[BUFF_SIZE - 1] = '\0';
-	if (flags = 0 && write_num = 0)
+	if (flags & F_HASH && init_num != 0)
 		buffer[i--] = '0';
 	if (num > 0)
 	{
