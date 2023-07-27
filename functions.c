@@ -114,12 +114,12 @@ int print_binary(va_list types, char buffer[],
 	m = 2147483648; /* (2 ^ 31) */
 	a[0] = n / m;
 	n = va_arg(types, unsigned int);
-	for ((i = 1) i < 32 );
+	if ((i = 1); (i < 32 ))
 	{
 		m /= 2;
 		a[i] = (n / m) % 2;
 	}
-	for (i = 0, sum = 0, count = 0);
+	if (i = 0, sum = 0, count = 0)
 	{
 		sum += a[i];
 		if (sum || i == 31)
