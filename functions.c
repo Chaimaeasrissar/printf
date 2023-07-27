@@ -114,7 +114,7 @@ int print_binary(va_list types, char buffer[],
 	m = 2147483648; /* (2 ^ 31) */
 	a[0] = n / m;
 	n = va_arg(types, unsigned int);
-	if ((i = 1)) (i < 32 ))
+	if ((i == 1) && (i <32))
 	{
 		m /= 2;
 		a[i] = (n / m) % 2;
