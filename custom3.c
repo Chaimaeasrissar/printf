@@ -66,3 +66,54 @@ int print_S(const char *str)
 
 	return (count);
 }
+
+/**
+ * reversed - Prints a reversed string.
+ * @str: The string to be printed in reverse.
+ *
+ * Return: The number of characters printed.
+ */
+int reversed(const char *str)
+{
+	int j = 0, i;
+
+	while (str[j])
+		j++;
+
+	for (i = j - 1; i >= 0; i--)
+		_putchar(str[i]);
+
+	return (j);
+}
+/**
+ * _rot13 - Prints a ROT13-encrypted string.
+ * @str: The string to be printed.
+ *
+ * Return: The number of characters printed.
+ */
+int _rot13(const char *str)
+{
+	int i = 0;
+	char chars;
+
+	if (str == NULL)
+		return (print_string("(null)"));
+
+	while (str[i])
+	{
+		chars = str[i];
+
+		if ((chars >= 'a' && chars <= 'z') || (chars >= 'A' && chars <= 'Z'))
+		{
+			if ((chars >= 'a' && chars <= 'm') || (chars >= 'A' && chars <= 'M'))
+				chars += 13;
+			else
+				chars -= 13;
+		}
+
+		_putchar(chars);
+		i++;
+	}
+
+	return (i);
+}
