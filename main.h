@@ -35,8 +35,8 @@ int print_int(va_list l, flags_t *f);
 int print_integer(va_list l, char length_modifier);
 void print_number(int n);
 int print_unsigned_integer(va_list l, char length_modifier);
-int print_octal(va_list l, char length_modifier);
-int print_hex(va_list l, char length_modifier, int uppercase);
+int print_octa(va_list l, char length_modifier);
+int print_hexadecimal(va_list l, char length_modifier, int uppercase);
 int print_unsigned(va_list l, flags_t *f);
 int count_digit(int i);
 

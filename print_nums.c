@@ -44,7 +44,7 @@ int print_unsigned_integer(va_list l, char length_modifier)
 	return (0);
 }
 
-int print_octal(va_list l, char length_modifier)
+int print_octa(va_list l, char length_modifier)
 {
 	if (length_modifier == 'l')
 	{
